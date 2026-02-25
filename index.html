@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>ALQUIPC</title>
+</head>
+<body>
+    <h1>ALQUIPC</h1>
+    <P>Bienvenido a ALQUIPC, aquí podrás alquilar computadores de distintas marcas, distintas características y los mejores precios.</P>
+
+    <form id="Formulario_De_Alquiler">
+
+        <label>Nombre del cliente:</label>
+        <input type="text"  id="nombre" required>
+
+        <label>Id_cliente:</label>
+        <input type="number"  id="id_cliente" required>
+
+        <label>Telefono:</label>
+        <input type="number"  id="telefono" required>
+
+        <label>Email:</label>
+        <input type="text"  id="email" required>
+
+        <label>Tipo de servicio:</label>
+        <select  id="tipo_servicio">
+
+            <option value="Dentro de la ciudad">Dentro de la ciudad (Estandar)</option>
+            <option value="Fuera de la ciudad">Fuera de la ciudad (5% Incremento)</option>
+            <option value="Dentro del establecimiento">Dentro del establecimiento (5% Desc)</option>
+
+        </select>   
+
+        <label>Número de equipos que desea alquilar(Minimo 2):</label>
+        <input type="number"  id="numero_equipos" min="2">
+
+        <label>Número de días iniciales:</label>
+        <input type="number"  id="numero_dias_iniciales" min="1">
+
+        <label>Número de días adicionales(2% por día adicional):</label>
+        <input type="number"  id="numero_dias_adicionales" min="1">
+
+
+        <button type="button" onclick="CalcularFactura()">Generar Factura</button>
+        
+
+
+
+
+    </form>
+
+    <script src="ALQUIPC.js"></script>
+</body>
+</html>
