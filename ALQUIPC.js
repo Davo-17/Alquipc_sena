@@ -46,7 +46,7 @@ if (!regexCorreo.test(correo)) {
 
   let recargoDiasExtra = 0;
   if (diasExtra > 0) {
-    recargoDiasExtra = subtotal * (0.02 * diasExtra);
+    recargoDiasExtra = subtotal * (0.90 * diasExtra);
   }
 
   let totalParcial = subtotal + recargoDiasExtra;
@@ -84,5 +84,6 @@ if (!regexCorreo.test(correo)) {
 }
 
 //Se uso I.A(Gemini) para corregir errores y estructurar el código de manera más clara, además de agregar validaciones para asegurar que el número de equipos sea al menos 2 y manejar casos donde los días adicionales no sean proporcionados.
+
 
 
