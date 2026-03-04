@@ -11,14 +11,6 @@ function CalcularFactura() {
     return;
   }
 
-  if (isNaN(diasExtra) || diasExtra >= 0) {
-    alert("Error: Los días adicionales deben ser un número válido.");
-    return;
-  }
-  
-
-
-
 
   if (equipos < 2 || isNaN(equipos)) {
     alert("Error: Debe alquilar al menos 2 equipos para generar la factura.");
@@ -92,4 +84,5 @@ if (!regexCorreo.test(correo)) {
 }
 
 //Se uso I.A(Gemini) para corregir errores y estructurar el código de manera más clara, además de agregar validaciones para asegurar que el número de equipos sea al menos 2 y manejar casos donde los días adicionales no sean proporcionados.
+
 
