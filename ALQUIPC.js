@@ -24,7 +24,7 @@ function CalcularFactura() {
   }
 
   if (!validarNombre(nombre)) {
-    alert("Error: El nombre solo puede contener letras y espacios.");
+    alert("Error: El nombre solo puede contener letras sin caracteres especiales y espacios.");
     return;
   }
 
@@ -78,3 +78,4 @@ function CalcularFactura() {
 } 
 
 //Se uso I.A(Gemini) para corregir errores y estructurar el código de manera más clara, además de agregar validaciones para asegurar que el número de equipos sea al menos 2 y manejar casos donde los días adicionales no sean proporcionados.
+
