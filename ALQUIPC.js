@@ -1,8 +1,9 @@
-    function CalcularFactura() {
-    function validarNombre(nombre) {
-  const regex = /^[a-zA-Z\s]+$/;    
-  return regex.test(nombre);
-}
+function CalcularFactura() {
+  function validarNombre(nombre) {
+    const regex = /^[a-zA-Z\s]+$/;
+    return regex.test(nombre);
+  }
+
   const PRECIO_BASE_DIA = 35000;
   const nombre = document.getElementById('nombre').value;
   const equipos = parseInt(document.getElementById('numero_equipos').value);
@@ -38,19 +39,20 @@
     return; 
   }
 
+  let subtotalBase = equipos * diasIni * PRECIO_BASE_DIA;
   let recargoDiasExtra = 0;
+
   if (diasExtra > 0) {
-    recargoDiasExtra = equipos * diasExtra * PRECIO_BASE_DIA * 0.90;
+    recargoDiasExtra = equipos * diasExtra * (PRECIO_BASE_DIA * 1.10);
   }
 
-  let subtotal = equipos * diasIni * PRECIO_BASE_DIA;
-  let totalParcial = subtotal + recargoDiasExtra;
-
+  let totalParcial = subtotalBase + recargoDiasExtra;
   let ajusteServicio = 0;
+
   if (tipo === "Fuera de la ciudad") {
-    ajusteServicio = totalParcial * 0.05; 
+    ajusteServicio = totalParcial * 0.05;
   } else if (tipo === "Dentro del establecimiento") {
-    ajusteServicio = -(totalParcial * 0.10); 
+    ajusteServicio = -(totalParcial * 0.10);
   }
 
   const totalFinal = totalParcial + ajusteServicio;
@@ -71,8 +73,8 @@
     <p>Días Adicionales: ${diasExtra}</p>
     <p>Servicio: ${tipo}</p>
     <hr>
-    <strong>Total a Pagar: $${totalFinal.toLocaleString()}</strong>
-    `;
-}
+    <strong>Total a Pagar: $${Math.round(totalFinal).toLocaleString()}</strong>
+  `;
+} 
 
 //Se uso I.A(Gemini) para corregir errores y estructurar el código de manera más clara, además de agregar validaciones para asegurar que el número de equipos sea al menos 2 y manejar casos donde los días adicionales no sean proporcionados.
